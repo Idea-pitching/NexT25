@@ -157,7 +157,7 @@ ul.tab li a:focus, .active {
 
 <div id="Submit" class="tabcontent">
    <h2>Submit Your Idea</h2>
-  <form class="form-horizontal" method="post" enctype="multipart/form-data">
+  <form class="form-horizontal" method="post" action="form.php" enctype="multipart/form-data">
 	<div class="form-group">
       <label class="control-label col-sm-2" for="name">Name:</label>
       <div class="col-sm-10">
