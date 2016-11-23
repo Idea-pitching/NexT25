@@ -161,38 +161,44 @@ ul.tab li a:focus, .active {
 	<div class="form-group">
       <label class="control-label col-sm-2" for="name">Name:</label>
       <div class="col-sm-10">
-       <input type="text" class="form-control" id="name" placeholder="What Should We Called You?" class="form-control input-md" required="">
+       <input type="text" class="form-control" name="name" id="name" placeholder="What Should We Called You?" class="form-control input-md" required="">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" class="form-control input-md" required="">
+        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" class="form-control input-md" required="">
       </div>
     </div>
-	 <div class="form-group">
-      <label class="control-label col-sm-2" for="category">Title:</label>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="title">Title:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="cat" placeholder="State Your Idea's Title" class="form-control input-md" required="">
+        <input type="text" class="form-control" name="video_title" id="video_title" placeholder="State Your Idea's Title" class="form-control input-md" required="">
       </div>
     </div>
 	<div class="form-group">
-      <label class="control-label col-sm-2" for="category">Video:</label>
+      <label class="control-label col-sm-2" for="video">Video:</label>
       <div class="col-sm-10">
-        <input type="file" name="video" id="files" accept="video/*" required="" capture>
+        <input type="file" name="video_blob" id="files"  accept="video/*" required="" capture>
       </div>
     </div>
 	 <div id="wrapper">
 	 <div class="form-group">
       <label class="control-label col-sm-2" for="details">Explain Idea:</label>
       <div class="col-sm-10">
-        <textarea maxlength="140" placeholder="Explain Your Idea Within 25 Words" class="form-control input-md" required=""></textarea>
+        <textarea maxlength="140" name="description" placeholder="Explain Your Idea Within 25 Words" class="form-control input-md" required=""></textarea>
       </div>
     </div>
-	</div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="keyword">Keyword:</label>
+     <div class="col-sm-10">
+        <input type="text" class="form-control" name="keyword" id="keyword" placeholder="State your keywords for your video" class="form-control input-md" required="">
+     </div>
+    </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit Now!</button>
+        <button type="submit" name="insert_video" class="btn btn-success">Submit Now!</button>
       </div>
     </div>
   </form>
