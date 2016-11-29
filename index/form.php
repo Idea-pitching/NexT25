@@ -21,6 +21,29 @@ $con = mysqli_connect("localhost","root","","next25");
 	$result = mysqli_query($con, $insert_video);
 	}
 ?>
+<?php
+include'connect_to_db.php';//connection to database
+?>
+<body>
+<br><br>
+<center>
+<?php
+//code for uploading videos...
+if(isset($_POST['video'])){//button for Upload
+$target = "uploaded_folder/"; //folder where to save the uploaded file/video
+ $target = $target . basename( $_FILES['uploaded']['name']) ; //gets the name of the upload file
+ $ok=1; 
+ if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target)) 
+ {
+     $query =mysql_query( "INSERT INTO tbl_video(video_name) VALUES ('$target')");//insertion to database
+ 
+ echo "The file ". basename( $_FILES['uploadedfile']['name']). " has been uploaded";
+ } 
+ else {
+ echo "Sorry, there was a problem uploading your file.";
+ }
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
