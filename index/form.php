@@ -1,6 +1,6 @@
 <?php 
 $con = mysqli_connect("localhost","root","","next25");
-$sql = "INSERT INTO video(id, video_name, video_title, description)";
+
 
 	if(isset($_POST['insert_video'])){
 	//get the video_details
@@ -16,9 +16,9 @@ $sql = "INSERT INTO video(id, video_name, video_title, description)";
 	
 	move_uploaded_file($video_blob_tmp, "../video/video_blob/$video_title");
 	
-	$insert_video = "INSERT INTO video(id, video_name, video_title, description, video_keywords) VALUES('$id','video_name','video_title','description','keyword')";
+	$insert_video = mysqli_query($con, "INSERT INTO video(video_name, email, video_title, video_blob ,description, video_keywords) VALUES('$video_name','$email, '$video_title','$video_blob','$description','$video_keywords')");
 	
-	$insert_vid = mysqli_query($con, $insert_video);
+	$result = mysqli_query($con, $insert_video);
 	}
 ?>
 <!DOCTYPE html>
@@ -161,7 +161,7 @@ ul.tab li a:focus, .active {
 	<div class="form-group">
       <label class="control-label col-sm-2" for="name">Name:</label>
       <div class="col-sm-10">
-       <input type="text" class="form-control" name="name" id="name" placeholder="What Should We Called You?" class="form-control input-md" required="">
+       <input type="text" class="form-control" name="video_name" id="name" placeholder="What Should We Called You?" class="form-control input-md" required="">
       </div>
     </div>
     <div class="form-group">
@@ -193,7 +193,7 @@ ul.tab li a:focus, .active {
     <div class="form-group">
       <label class="control-label col-sm-2" for="keyword">Keyword:</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" name="keyword" id="keyword" placeholder="State your keywords for your video" class="form-control input-md" required="">
+        <input type="text" class="form-control" name="video_keywords" id="keyword" placeholder="State your keywords for your video" class="form-control input-md" required="">
      </div>
     </div>
     <div class="form-group">
